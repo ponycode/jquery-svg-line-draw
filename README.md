@@ -45,10 +45,8 @@ You can use this plugin to create that cool "lines drawing into an image" effect
 	});
 	```
 
-#### [demo/](https://github.com/ponycode/jquery-svg-line-draw/tree/master/demo)
+#### [Demo](https://htmlpreview.github.com/ponycode/jquery-svg-line-draw/blob/master/demo/index.html)
 
-Contains a simple HTML demo
-
-#### [dist/](https://github.com/ponycode/jquery-svg-line-draw/tree/master/dist)
+#### [Distribution/](https://github.com/ponycode/jquery-svg-line-draw/tree/master/dist)
 
 Contains the minified JS
