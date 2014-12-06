@@ -8,13 +8,19 @@ You can use this plugin to create that cool "lines drawing into an image" effect
 
 ## Usage
 
-1. Include jQuery and SVG Line Draw:
+1. Create an SVG
+
+	I highly recommend using [Sketch](http://bohemiancoding.com/sketch/) to create your SVG. You need to use the Vector line drawing tool
+	to build your shapes. This plugin will automatically draw all `Path` elements within the SVG. Once
+	you have exported your SVG from Sketch you can embed it directly into your HTML as seen in the demo.
+
+2. Include jQuery and SVG Line Draw:
 
 	```html
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="/javascript/jquery.svg-line-draw.min.js"></script>
 	```
-2. Setup your HTML / SVG / IMAGE:
+3. Setup your HTML / SVG / IMAGE:
 	
 	You'll need to wrap your SVG and Image(optional) in a containing div which you will select using jQuery.	
 	```html
@@ -31,7 +37,7 @@ You can use this plugin to create that cool "lines drawing into an image" effect
 	
 	NOTE: It's easiest to align the SVG and Image if they have fixed widths. In this example both the SVG and Image are set to fill the .lineAnimation container. Notice that the SVG has `preserveAspectRatio="xMinYMin meet"` set which causes it to fill it's container.
 	
-3. Call setup:
+4. Initialize:
 
 	```javascript
 	$('.lineAnimation').svgDraw({
@@ -40,13 +46,15 @@ You can use this plugin to create that cool "lines drawing into an image" effect
 	});
 	```
 
-4. Start the animation:
+5. Start the animation:
 
 	```javascript
 	$('.lineAnimation').startSvgDraw( function(){
 		console.log( "Animation is all done" );
 	});
 	```
+	
+6. Profit
 
 #### [Demo](http://htmlpreview.github.io/?https://github.com/ponycode/jquery-svg-line-draw/blob/master/demo/index.html)
 
