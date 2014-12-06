@@ -61,3 +61,9 @@ You can use this plugin to create that cool "lines drawing into an image" effect
 #### [Distribution](https://github.com/ponycode/jquery-svg-line-draw/tree/master/dist)
 
 Contains the minified JS
+
+#### Thanks
+
+This explanation was super helpful: [http://css-tricks.com/svg-line-animation-works/](http://css-tricks.com/svg-line-animation-works/)
+
+My first version of the code was based on this: [http://tympanus.net/codrops/2013/12/30/svg-drawing-animation/](http://tympanus.net/codrops/2013/12/30/svg-drawing-animation/)
