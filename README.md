@@ -56,6 +56,15 @@ You can use this plugin to create that cool "lines drawing into an image" effect
 	
 6. Profit
 
+
+## Options
+
+* totalFrames: Fewer frames result in faster animations. Default is 60.
+* fadeToImage: If true and your container div has an IMG and an SVG, the plugin will use CSS3 transitions to fade from the SVG line drawing to your image. See the demo. Default is false.
+* fadeTransition: If you are using `fadeToImage` then this can be used to override the type of CSS3 transition. Default is `opacity 0.3s`.
+
+
+
 #### [View Demo](http://htmlpreview.github.io/?https://github.com/ponycode/jquery-svg-line-draw/blob/master/demo/index.html)
 
 #### [Get The JS](https://github.com/ponycode/jquery-svg-line-draw/tree/master/dist)
