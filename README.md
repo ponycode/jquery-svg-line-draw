@@ -21,9 +21,10 @@ You can use this plugin to create that cool "lines drawing into an image" effect
 	<div class="lineAnimation">
 		<img class="plugImage" src="CurtziPlugLineDrawing.png"/>
 		<svg class="plugSVG" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 600" version="1.1">
-			I have omitted the SVG guts. Your SVG should contains Path elements which will be drawn.
-			You can draw as many paths as you want. See the demo included in this project for a 
-			working example.
+			I have omitted the SVG guts. Your SVG should contains 
+			Path elements which will be drawn. You can draw as many 
+			paths as you want. See the demo included in this project 
+			for a working example.
 		</svg>
 	</div>
 	```
