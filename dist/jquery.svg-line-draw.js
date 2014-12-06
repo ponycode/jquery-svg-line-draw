@@ -2,7 +2,7 @@
  jQuery svg-line-draw Plugin
  @name jquery.svg-line-draw.js
  @author Joshua Kennedy (https://github.com/jkennedy1980)
- @version 0.1.2
+ @version 0.1.3
  @category jQuery Plugin
  @copyright (c) 2014 PonyCode Corporation (http://www.ponycode.com)
  @license Licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) license.
