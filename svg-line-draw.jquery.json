@@ -13,15 +13,16 @@
 	  	"drawing",
 	  	"scalable"
 	],
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"author": {
 		"name": "Joshua Kennedy",
 		"email": "josh@ponycode.com",
 		"url": "https://github.com/jkennedy1980"
 	},
 	"licenses": [
-		{
-			"type": "MIT"
+		{	
+		  "type": "MIT",
+		  "url": "http://opensource.org/licenses/MIT"
 		}
 	],
 	"bugs": "https://github.com/ponycode/jquery-svg-line-draw/issues",
