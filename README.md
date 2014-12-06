@@ -1,30 +1,43 @@
 # jQuery SVG Line Draw
 
-### A jump-start for jQuery plugins development
+### Watch your SVG's draw in web pages
 
-So, you've tried your hand at writing jQuery plugins and you're comfortable putting together something that probably works. Awesome! Thing is, you think there might be better ways you could be writing them - you've seen them done a number of different ways in the wild, but aren't really sure what the differences between these patterns are or how to get started with them.
-
-This project won't seek to provide a perfect solution to every possible pattern, but will attempt to cover a simple template for beginners and above. By using a basic defaults object, simple constructor for assigning the element to work with and extending options with defaults and a lightweight wrapper around the constructor to avoid issues with multiple instantiations.
+You can use this plugin to create that cool "lines drawing into an image" effect
 
 ## Usage
 
-1. Include jQuery:
+1. Include jQuery and SVG Line Draw:
 
 	```html
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="/javascript/jquery.svg-line-draw.min.js"></script>
 	```
-
-2. Include plugin's code:
+2. Setup your HTML / SVG / IMAGE:
 
 	```html
-	<script src="dist/jquery.boilerplate.min.js"></script>
+		<div class="lineAnimation">
+		<img class="plugImage" src="CurtziPlugLineDrawing.png"/>
+		<svg class="plugSVG" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 600" version="1.1">
+			I have omitted the SVG guts. Your SVG should contains Path elements which will be drawn.
+			You can draw as many paths as you want. See the demo included in this project for a 
+			working example.
+		</svg>
+	</div>
 	```
-
-3. Call the plugin:
+3. Call setup:
 
 	```javascript
-	$("#element").defaultPluginName({
-		propertyName: "a custom value"
+	$('.lineAnimation').svgDraw({
+		totalFrames: 60, 	// Number of frames - fewer frames for faster animations
+		fadeToImage: false 	// Should the SVG fade into an image when the animation is done?
+	});
+	```
+
+4. Start the animation:
+
+	```javascript
+	$('.lineAnimation').startSvgDraw( function(){
+		console.log( "Animation is all done" );
 	});
 	```
 
