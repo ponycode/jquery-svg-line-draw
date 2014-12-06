@@ -4,6 +4,8 @@
 
 You can use this plugin to create that cool "lines drawing into an image" effect
 
+![Example animation](/demo/svg-line-draw.gif?raw=true "Example animation")
+
 ## Usage
 
 1. Include jQuery and SVG Line Draw:
