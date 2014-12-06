@@ -7,17 +7,38 @@
 	<script type="text/javascript">
 		$( function(){
 			
-			
-			
-			
-			var $lineAnimation = $('.lineAnimation').svgDraw({
-				totalFrames: 60,
-				revealImageSelector: ".plugImage"
+			var $img = $('.plugImage');
+			var $svg = $('.plugSVG');
+
+			$('#startButton' ).click( function(){
+				$img.css({display:'none'});
+				$svg.css({opacity:1.0});
+
+				var $lineAnimation = $('.lineAnimation').svgDraw({
+					totalFrames: 60,
+					fadeToImage: false
+				});
+
+				$lineAnimation.startSvgDraw( function(){
+					console.log( "Animation is all done" );
+				});
 			});
 
-			
-			$lineAnimation.start( function( $svg ){
+			$('#startFadeButton' ).click( function(){
+				$img.css({opacity:'none'});
+
+				var $lineAnimation = $('.lineAnimation').svgDraw({
+					totalFrames: 60,
+					fadeToImage: true
+				});
+
+				$img.css({display:'block'});
+				
+				$lineAnimation.startSvgDraw( function(){
+					console.log( "Animation is all done" );
+				});
 			});
+			
 		});
 	</script>
 	<style>
@@ -57,9 +78,12 @@
 </head>
 <body>
 	<h2>SVG Line Draw Example</h2>
+	<button id="startButton">Draw SVG</button> <button id="startFadeButton">Draw SVG to Image</button>
+	<br/>
+	
 	<div class="lineAnimation">
 		<img class="plugImage" src="CurtziPlugLineDrawing.png"/>
-		<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 600" version="1.1" xmlns="http://www.w3.org/2000/svg">
+		<svg class="plugSVG" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 600" version="1.1" xmlns="http://www.w3.org/2000/svg">
 			<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
 				<path d="M165.5,158 L137.523438,227.117188 L247.429688,534.195312" id="Path-1" stroke="#D0D0D0" stroke-width="10" sketch:type="MSShapeGroup"></path>
 				<path d="M531.382812,127.257812 L168,160 L283.257812,461.335938" id="Path-2" stroke="#D0D0D0" stroke-width="10" sketch:type="MSShapeGroup"></path>

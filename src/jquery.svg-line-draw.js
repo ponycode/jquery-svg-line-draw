@@ -1,15 +1,14 @@
 ;(function( $, window, document, undefined ){
 
 	var defaultOptions = {
-		totalFrames: 60
+		totalFrames: 60,
+		fadeToImage: false
 	};
 
 	var SVGDraw = ( function( options ){
 
 		function SVGDraw( svgWrapper, options ){
 			this.$svgWrapper = $(svgWrapper);
-			this.$img = this.$svgWrapper.find('img');
-			this.$svg = this.$svgWrapper.find('svg');
 
 			this.options = $.extend( {}, defaultOptions, options );
 
@@ -20,16 +19,21 @@
 			this.setup();
 		}
 
-		SVGDraw.prototype.setup = function( options ){
+		SVGDraw.prototype.setup = function(){
 			var self = this;
 
-			var fadeTransition = _cssTransition("opacity 0.3s");
-			fadeTransition.opacity = 0.0;
-			self.$img.css(fadeTransition);
+			if( self.options.fadeToImage ){
+				self.$img = this.$svgWrapper.find('img');
+				self.$svg = this.$svgWrapper.find('svg');
+				
+				var fadeTransition = _cssTransition("opacity 0.3s");
+				fadeTransition.opacity = 0.0;
+				self.$img.css(fadeTransition);
 
-			fadeTransition.opacity = 1.0;
-			self.$svg.css(fadeTransition);
-
+				fadeTransition.opacity = 1.0;
+				self.$svg.css(fadeTransition);
+			}
+			
 			self.preparePaths();
 		};
 
@@ -58,8 +62,9 @@
 			return css;
 		}
 
-		SVGDraw.prototype.start = function(){
+		SVGDraw.prototype.start = function( callback ){
 			var self = this;
+			self.options.callback = callback;
 			self.draw();
 		};
 
@@ -70,12 +75,16 @@
 			if( progress > 1 ){
 				window.cancelAnimationFrame( self.drawHandle );
 
-				var css = {};
-				css.opacity = 1.0;
-				self.$img.css(css);
+				if( self.options.fadeToImage ){
+					var css = {};
+					css.opacity = 1.0;
+					self.$img.css( css );
 
-				css.opacity = 0.0;
-				self.$svg.css(css);
+					css.opacity = 0.0;
+					self.$svg.css( css );
+				}
+				
+				if( self.options.callback ) self.options.callback();
 			}else{
 				self.currentFrame++;
 
@@ -95,23 +104,23 @@
 		return SVGDraw;
 	})();
 
-	function _instance( element, options ){
+	function _instance( element, options, forceNew ){
 		var $element = $(element);
 		var instance = $element.data( 'svgDrawInstance' );
-		if( instance ) return instance;
+		if( instance && !forceNew ) return instance;
 		instance = new SVGDraw( element, options || {} );
 		$element.data( 'svgDrawInstance', instance );
 		return instance;
 	}
 
 	$.fn.svgDraw = function( options ){
-		_instance( this, options );
+		_instance( this, options, true );
 		return this;
 	};
 
-	$.fn.start = function(){
+	$.fn.startSvgDraw = function( callback ){
 		var instance = _instance( this );
-		instance.start();
+		instance.start( callback );
 		return this;
 	};
 
