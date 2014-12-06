@@ -29,7 +29,7 @@ You can use this plugin to create that cool "lines drawing into an image" effect
 	</div>
 	```
 	
-	NOTE: It's easiest to align the SVG and Image if they have fixed widths. In this example both the SVG and Image are set to fill the .lineAnimation container.
+	NOTE: It's easiest to align the SVG and Image if they have fixed widths. In this example both the SVG and Image are set to fill the .lineAnimation container. Notice that the SVG has `preserveAspectRatio="xMinYMin meet"` set which causes it to fill it's container.
 	
 3. Call setup:
 
