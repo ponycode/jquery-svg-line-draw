@@ -2,63 +2,45 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 
-		// Import package manifest
-		pkg: grunt.file.readJSON("boilerplate.jquery.json"),
+		pkg: grunt.file.readJSON("svg-line-draw.jquery.json"),
 
-		// Banner definitions
 		meta: {
-			banner: "/*\n" +
-				" *  <%= pkg.title || pkg.name %> - v<%= pkg.version %>\n" +
-				" *  <%= pkg.description %>\n" +
-				" *  <%= pkg.homepage %>\n" +
-				" *\n" +
-				" *  Made by <%= pkg.author.name %>\n" +
-				" *  Under <%= pkg.licenses[0].type %> License\n" +
+			banner: "/*!\n" +
+				" jQuery <%= pkg.name %> Plugin\n" +
+				" @name jquery.svg-line-draw.js\n" +
+				" @author <%= pkg.author.name %> (<%= pkg.author.url %>)\n" +
+				" @version <%= pkg.version %>\n" + 
+				" @category jQuery Plugin\n" +
+				" @copyright (c) 2014 PonyCode Corporation (http://www.ponycode.com)\n" + 
+				" @license Licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) license.\n" + 
 				" */\n"
 		},
 
-		// Concat definitions
+
 		concat: {
 			dist: {
-				src: ["src/jquery.boilerplate.js"],
-				dest: "dist/jquery.boilerplate.js"
+				src: ["src/jquery.svg-line-draw.js"],
+				dest: "dist/jquery.svg-line-draw.js"
 			},
 			options: {
 				banner: "<%= meta.banner %>"
 			}
 		},
 
-		// Lint definitions
 		jshint: {
-			files: ["src/jquery.boilerplate.js"],
-			options: {
-				jshintrc: ".jshintrc"
-			}
+			files: ["src/jquery.svg-line-draw.js"]
 		},
 
-		// Minify definitions
 		uglify: {
 			my_target: {
-				src: ["dist/jquery.boilerplate.js"],
-				dest: "dist/jquery.boilerplate.min.js"
+				src: ["dist/jquery.svg-line-draw.js"],
+				dest: "dist/jquery.svg-line-draw.min.js"
 			},
 			options: {
 				banner: "<%= meta.banner %>"
-			}
-		},
-
-		// CoffeeScript compilation
-		coffee: {
-			compile: {
-				files: {
-					"dist/jquery.boilerplate.js": "src/jquery.boilerplate.coffee"
-				}
 			}
 		},
 		
-		// watch for changes to source 
-		// Better than calling grunt a million times 
-		// (call 'grunt watch')
 		watch: {
 		    files: ['src/*'],
 		    tasks: ['default']
@@ -69,7 +51,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
-	grunt.loadNpmTasks("grunt-contrib-coffee");
 	grunt.loadNpmTasks("grunt-contrib-watch");
 
 	grunt.registerTask("default", ["jshint", "concat", "uglify"]);
