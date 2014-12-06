@@ -2,7 +2,8 @@
 
 	var defaultOptions = {
 		totalFrames: 60,
-		fadeToImage: false
+		fadeToImage: false,
+		fadeTransition: "opacity 0.3s"
 	};
 
 	var SVGDraw = ( function( options ){
@@ -26,7 +27,7 @@
 				self.$img = this.$svgWrapper.find('img');
 				self.$svg = this.$svgWrapper.find('svg');
 				
-				var fadeTransition = _cssTransition("opacity 0.3s");
+				var fadeTransition = _cssTransition( self.options.fadeTransition );
 				fadeTransition.opacity = 0.0;
 				self.$img.css(fadeTransition);
 
