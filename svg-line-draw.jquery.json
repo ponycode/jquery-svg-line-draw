@@ -1,6 +1,6 @@
 {
-	"name": "jquery-svg-line-draw",
-	"title": "jQuery SVG Line Draw",
+	"name": "svg-line-draw",
+	"title": "SVG Line Draw plugin for jQuery",
 	"description": "jQuery plugin to animate SVG paths as if they are being drawn on-screen",
 	"keywords": [
 		"SVG",
@@ -9,7 +9,9 @@
 	  	"vector",
 	  	"sketch",
 	  	"path",
-	  	"line"
+	  	"line",
+	  	"drawing",
+	  	"scalable"
 	],
 	"version": "0.1.1",
 	"author": {
@@ -25,6 +27,9 @@
 	"bugs": "https://github.com/ponycode/jquery-svg-line-draw/issues",
 	"docs": "https://github.com/ponycode/jquery-svg-line-draw#readme",
 	"download": "https://github.com/ponycode/jquery-svg-line-draw/archive/master.zip",
+  	"homepage": "https://github.com/ponycode/jquery-svg-line-draw",
+  	"docs": "https://github.com/ponycode/jquery-svg-line-draw",
+  	"demo": "http://htmlpreview.github.io/?https://github.com/ponycode/jquery-svg-line-draw/blob/master/demo/index.html",
 	"dependencies": {
 		"jquery": ">=2.0"
 	}
