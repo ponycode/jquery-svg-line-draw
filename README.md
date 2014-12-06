@@ -1,6 +1,6 @@
-# jQuery SVG Line Draw
+# SVG Line Draw
 
-### Watch your SVG's draw in web pages
+### Turn your SVG into an animated line drawing
 
 You can use this plugin to create that cool "lines drawing into an image" effect
 
@@ -8,7 +8,7 @@ You can use this plugin to create that cool "lines drawing into an image" effect
 
 ## Usage
 
-1. Create an SVG
+1. Create an SVG:
 
 	I highly recommend using [Sketch](http://bohemiancoding.com/sketch/) to create your SVG. You need to use the Vector line drawing tool
 	to build your shapes. This plugin will automatically draw all `Path` elements within the SVG. Once
